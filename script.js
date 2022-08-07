@@ -140,6 +140,11 @@ function displayValue() {
 
 }
 
+backSpace.addEventListener('click',() => {
+
+    displayBottom.textContent = displayBottom.textContent.substring(0 , displayBottom.textContent.length - 1);
+
+})
 
 
 

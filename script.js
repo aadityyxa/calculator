@@ -1,3 +1,8 @@
+const displayBottom = document.querySelector('.display-bottom');
+const buttons = document.querySelectorAll('button');
+const displayTop = document.querySelector('.display-top');
+const backSpace = document.querySelector('.backspace');
+
 
 function add(a, b) {
 
@@ -53,6 +58,24 @@ function factorial(a) {
 
 function power(a,b) {
     return a**b; // calculates exponentials
+}
+
+function operate(operator, a, b) {
+
+    if(operator == "add") {
+        return add(a,b);
+    }else if(operator == "subtract") {
+        return subtract(a,b);
+    }else if(operator == "multiply") {
+        return multiply(a,b);
+    }else if(operator == "divide") {
+        return divide(a,b);
+    }else if(operator == "factorial") {
+        return factorial(a);
+    }else if(operator == "power") {
+        return power(a,b);
+    }
+     //takes two numbers and performs one of of the operations listed above.
 }
 
 

@@ -12,18 +12,23 @@ function add(a, b) {
 
     let sum =  (num1 + num2)//adds two numbers
 
-    return sum;
+    if(sum % 1 != 0) {
+        return sum.toFixed(1)
+    }else return sum;
 
 }
+
 
 function subtract(a, b) {
 
     let num1 = parseFloat(a);
     let num2 = parseFloat(b);
 
-    let sum =  (num1 - num2); //subtracts two numbers
-    
-    return sum;
+        let sum =  (num1 - num2);
+
+    if(sum % 1 != 0) {
+        return sum.toFixed(1)
+    }else return sum; //subtracts two numbers
 }
 
 function multiply(a, b) {   
@@ -32,7 +37,10 @@ function multiply(a, b) {
     let num2 = parseFloat(b);
 
     let sum =  (num1 * num2);
-    return sum; //multiplies two numbers
+
+    if(sum % 1 != 0) {
+        return sum.toFixed(1)
+    }else return sum; //multiplies two numbers
 }
 
 function divide(a, b) {
@@ -41,7 +49,10 @@ function divide(a, b) {
     let num2 = parseFloat(b);
 
         let sum =  (num1 / num2);
-    return sum; //divides two numbers
+
+    if(sum % 1 != 0) {
+        return sum.toFixed(1)
+    }else return sum; //divides two numbers
 }
 
 function factorial(a) {
@@ -51,14 +62,23 @@ function factorial(a) {
     let num = parseInt(a);
 
     for(i = num; i > 0; i--) {
-        factorial *= i; // returns the factorial of a number
+        factorial *= i;
     }
 
     return factorial;
 }
 
 function power(a,b) {
-    return a**b; // calculates exponentials
+    return a**b;
+}
+
+function allClear() {
+
+    const displayBottom = document.querySelector('.display-bottom');
+    const displayTop = document.querySelector('.display-top');
+    const backSpace = document.querySelector('.backspace');
+    displayBottom.textContent = '';
+    displayTop.textContent = '';
 }
 
 function operate(operator, a, b) {
@@ -78,6 +98,7 @@ function operate(operator, a, b) {
     }
      //takes two numbers and performs one of of the operations listed above.
 }
+
 
 
 function displayValue() {

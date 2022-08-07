@@ -3,6 +3,7 @@ const buttons = document.querySelectorAll('button');
 const displayTop = document.querySelector('.display-top');
 const backSpace = document.querySelector('.backspace');
 
+buttons.onclick = displayValue();
 
 function add(a, b) {
 
@@ -76,6 +77,46 @@ function operate(operator, a, b) {
         return power(a,b);
     }
      //takes two numbers and performs one of of the operations listed above.
+}
+
+
+function displayValue() {
+    const displayBottom = document.querySelector('.display-bottom');
+    const displayTop = document.querySelector('.display-top');
+    const buttons = document.querySelectorAll('button');
+    let firstValue;
+    let operation;
+
+    buttons.forEach((button) => button.addEventListener('click',() => {
+
+        if(button.className === 'number') {
+            displayBottom.textContent += button.id;
+
+        }else if(button.className === 'operator') {
+                if(firstValue) {
+                    displayBottom.textContent = operate(operation, firstValue, displayBottom.textContent);
+                    displayTop.textContent = '';
+                }
+            
+            firstValue = displayBottom.textContent;
+            operation = button.id;
+            displayTop.textContent += `${firstValue} ${button.value}`
+            displayBottom.textContent = '';
+            
+        }else if(button.className === 'equals') {
+            displayBottom.textContent = operate(operation, firstValue, displayBottom.textContent);
+            displayTop.textContent = '';
+            firstValue = '';
+            
+            
+        }else if(button.id === 'clear') {
+            allClear();
+        }else if(button.id === 'decimal') {
+            displayBottom.textContent += button.value;
+        }
+
+    }))
+
 }
 
 

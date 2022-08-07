@@ -14,6 +14,8 @@ body{
     color: orange;
 }
 
+
+
 .calc{
     background:#242c3d;
     height:800px;
@@ -91,5 +93,11 @@ button {
 
 #clear{
     color:white;
+}
+
+.credit {
+    color: whitesmoke;
+    font-size: 24px;
+    font-weight: 600;
 }
 

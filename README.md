@@ -12,4 +12,4 @@ The operations it can perform are:
     5. Factorial
     6. Exponents
 
-
+Live Preview at :https://aadityyxa.github.io/calculator/
